@@ -5,6 +5,9 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>UPS MOTIPURA KHAUD - SWAR(RAMPUR)</title>
+   <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
 </head>
 <body>
    <div class="container">
@@ -267,10 +270,16 @@ return;
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => alert("Data Saved."))
                 .catch(error => console.error('Error!', error.message))
-            document.getElementById("survey-form").reset();
+                document.getElementById("survey-form").reset();
             })
           </script>
-
+<script>
+        $(function() {
+            $('input').keyup(function() {
+                this.value = this.value.toLocaleUpperCase();
+            });
+        });
+    </script> 
 </body>
 </html>
 <style>
