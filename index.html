@@ -6,14 +6,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>UPS MOTIPURA KHAUD - SWAR(RAMPUR)</title>
 </head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
-<script>  
-    $(document).ready(function () {  
-        $("input[type=text]").keyup(function () {  
-            $(this).val($(this).val().toUpperCase());  
-        });  
-    });  
-</script> 
 <body>
    <div class="container">
        <header>
@@ -74,17 +66,17 @@ return;
 
            <div class='form-input'>
                <label id='name-label'>Date of Addmission</label>
-               <input type='text'  name="Date of Addmission" placeholder='DD/MM/YYYY' id='Date of Addmission' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="Date of Addmission" placeholder='DD/MM/YYYY' id='Date of Addmission' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
                <label id='name-label'>Student Name</label>
-               <input type='text'   name="Student Name" id='name' placeholder='Student Name' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()"  name="Student Name" id='name' placeholder='Student Name' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
                <label id='name-label'>Student Name(As Per adhar)</label>
-               <input type='text'  name="Student Name(As Per adhar)" id='name' placeholder='Student Name(As Per adhar)' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="Student Name(As Per adhar)" id='name' placeholder='Student Name(As Per adhar)' class='form-input-size' required />
            </div>
 
 
@@ -108,12 +100,12 @@ function maxLengthCheck(object)
 
            <div class='form-input'>
                <label id='name-label'>FATHER/MOTHER NAME AS PER STUDENT ADHAR</label>
-               <input type='text'  name="FATHER/MOTHER NAME AS PER STUDENT ADHAR" id='name' placeholder='FATHER/MOTHER NAME AS PER STUDENT ADHAR' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="FATHER/MOTHER NAME AS PER STUDENT ADHAR" id='name' placeholder='FATHER/MOTHER NAME AS PER STUDENT ADHAR' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
                <label id='name-label'>Father Name (As Per adhar)</label>
-               <input type='text'  name="Father Name (As Per adhar)" id='name' placeholder='Father Name (As Per adhar)' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="Father Name (As Per adhar)" id='name' placeholder='Father Name (As Per adhar)' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
@@ -123,7 +115,7 @@ function maxLengthCheck(object)
 
             <div class='form-input'>
                <label id='name-label'>Mother Name (As per adhar)</label>
-               <input type='text' name="Mother Name (As per adhar)" id='name' placeholder='Mother Name (As per adhar)' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="Mother Name (As per adhar)" id='name' placeholder='Mother Name (As per adhar)' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
@@ -134,17 +126,17 @@ function maxLengthCheck(object)
 
           <div class='form-input'>
                <label id='name-label'>IFSC CODE </label>
-               <input type='text' name="IFSC CODE" id='name' placeholder='IFSC CODE' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="IFSC CODE" id='name' placeholder='IFSC CODE' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
                <label id='name-label'>BRANCH</label>
-               <input type='text'  name="BRANCH" id='name' placeholder='BRANCH' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="BRANCH" id='name' placeholder='BRANCH' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
                <label id='name-label'>ACCOUNT HOLDER NAME AS PER PASS BOOK </label>
-               <input type='text'  name="ACCOUNT HOLDER NAME AS PER PASS BOOK" id='name' placeholder='ACCOUNT HOLDER NAME AS PER PASS BOOK' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="ACCOUNT HOLDER NAME AS PER PASS BOOK" id='name' placeholder='ACCOUNT HOLDER NAME AS PER PASS BOOK' class='form-input-size' required />
            </div>
 
            <div class='form-input'>
@@ -154,7 +146,7 @@ function maxLengthCheck(object)
 
             <div class='form-input'>
                <label id='name-label'>ACCOUNT HOLDER NAME AS PER ADHAR</label>
-               <input type='text'  name="ACCOUNT HOLDER NAME AS PER ADHAR" id='name' placeholder='ACCOUNT HOLDER NAME AS PER ADHAR' class='form-input-size' required />
+               <input type='text' oninput="this.value = this.value.toUpperCase()" name="ACCOUNT HOLDER NAME AS PER ADHAR" id='name' placeholder='ACCOUNT HOLDER NAME AS PER ADHAR' class='form-input-size' required />
            </div>
 
             <div class='form-input'>
