@@ -1,13 +1,27 @@
-<!DOCTYPE html>
-<html LANG=pt_BR /opt/google/chrome/chrome>
+<!doctype html>
+<html>
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>UPS MOTIPURA KHAUD - SWAR(RAMPUR)</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<title>UPS MOTIPURA KHAUD - SWAR(RAMPUR)</title>
+<style type="text/css">
+#loader {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.75) url(loading2.gif) no-repeat center center;
+  z-index: 10000;
+}
+</style>
 </head>
 <body>
-   <div class="container">
+  <div class="container">
        <header>
            <h1 id='title'>UPS MOTIPURA KHAUD - SWAR(RAMPUR)</h1>
            <p id='description'>
@@ -16,7 +30,7 @@
            </p>
        </header>
        <form method="POST" autocomplete="off" name="google-sheet" id='survey-form'>
-<script>
+        <script>
 function copyTextValue9(selectedOption) {
 if(selectedOption.selectedIndex <= 0){
 document.getElementById("destination").value = '';
@@ -42,11 +56,23 @@ return;
                <label id='name-label'>FAMILY ID</label>
                <input type='number' name="FAMILY ID" id='name' placeholder='FAMILY ID' class='form-input-size' required />
            </div>
-</script>  
-<input type="text" name="Class" id="class_out" style="visibility: hidden;">                   
+  
+<script>
+function copyTextValueclass(selectedOption) {
+if(selectedOption.selectedIndex <= 0){
+document.getElementById("class_out").value = '';
+return;
+}
+
+ var selectedOptionValue = selectedOption.value;
+ document.getElementById("class_out").value = selectedOptionValue;
+}
+</script>
+
+<input type="text" name="Class" id="class_out" style="visibility: hidden;">                  
            <div class='form-input'>
                <p>Class</p>
-               <select onChange="copyTextValue(this);" id='class' class='form-input-size' required>
+               <select onChange="copyTextValueclass(this);" id='class' class='form-input-size' required>
                    <option disabled selected value>--SELECT--</option>
                    <option value="I">I</option>
                    <option value="II">II</option>
@@ -246,22 +272,33 @@ return;
            <div class='form-input'>
                <input type="submit" id='myBtn' class="submitBtn" value="Submit"/>
            </div>
-       </form>
-   </div>
-   <script>
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzBoS1sJvdwrVinQnwfkEPAqVbGHRBzSJNo7_BRtpvq1ZtZBAhY/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Data Saved."))
-                .catch(error => console.error('Error!', error.message))
-                document.getElementById("survey-form").reset();
-            })
-          </script>
+           <span id="show_data">
+           <a href="https://docs.google.com/spreadsheets/d/1XhM2N7ICHBHG2AupwK8FJJnK8LDsBA0BKc_Ss3Wzq28/edit?usp=sharing" target="_blank">Show Data</a></span>
+</form>
+</div>
+<div id="loader"></div>
+<!-- INCLUDE "t2228.php:PHP" -->
+ 
+
+<script>
+var spinner = $('#loader');
+$(function() {
+  $('form').submit(function(e) {
+    e.preventDefault();
+    spinner.show();
+    $.ajax({
+      url: 'https://script.google.com/macros/s/AKfycbzBoS1sJvdwrVinQnwfkEPAqVbGHRBzSJNo7_BRtpvq1ZtZBAhY/exec',
+      data: $(this).serialize(),
+      method: 'post',
+      dataType: 'JSON'
+    }).done(function(resp) {
+      spinner.hide();
+      alert("Data Saved");
+    });
+  });
+});
+</script>
 </body>
-</html>
 <style>
   html{
     font-size: 16px;
@@ -358,4 +395,16 @@ textarea{
  cursor: pointer;
  border: none;
 }
+#show_data{
+    background-color: white;
+     width: 100%;
+ padding: 0.8rem;
+ color: white;
+ border-radius: 0.2rem;
+ cursor: pointer;
+ border: none;
+ margin-left: 40%;
+}
 </style>
+ 
+		
