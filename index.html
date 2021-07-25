@@ -185,10 +185,29 @@ function maxLengthCheck(object)
                <input oninput="maxLengthCheck(this)" type = "number" maxlength = "10" name="ACCOUNT HOLDER MOBILE NO" id='name' placeholder='ACCOUNT HOLDER MOBILE NO' class='form-input-size' required />
            </div>
 
-            <div class='form-input'>
-               <label id='name-label'>STUDENT RELATION WITH ACCOUNT HOLDER</label>
-               <input type = "text" name="STUDENT RELATION WITH ACCOUNT HOLDER" placeholder='STUDENT RELATION WITH ACCOUNT HOLDER' class='form-input-size' autocapitalize="characters" required />
+           <script>
+function copyTextValuerelation(selectedOption) {
+if(selectedOption.selectedIndex <= 0){
+document.getElementById("relation").value = '';
+return;
+}
+
+ var selectedOptionValue = selectedOption.value;
+ document.getElementById("relation").value = selectedOptionValue;
+}
+</script> 
+<input type="text" name="STUDENT RELATION WITH ACCOUNT HOLDER" id="relation" style="visibility:hidden;"> 
+           <div class='form-input'>
+               <p>STUDENT RELATION WITH ACCOUNT HOLDER</p>
+               <select onChange="copyTextValuerelation(this);" id='dropdown' class='form-input-size' required>
+                   <option disabled selected value>--SECECT--</option>
+                   <option value='FATHER'>FATHER</option>
+                   <option value='MOTHER'>MOTHER</option>
+                   <option value='GARGIAN'>GARGIAN</option>
+                   <option value='OTHER'>OTHER</option>
+               </select>
            </div>
+
 <script>
 function copyTextValue2(selectedOption) {
 if(selectedOption.selectedIndex <= 0){
